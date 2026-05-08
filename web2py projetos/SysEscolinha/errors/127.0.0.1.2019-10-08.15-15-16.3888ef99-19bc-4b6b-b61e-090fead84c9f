@@ -1,0 +1,19 @@
+(dp1
+S'output'
+p2
+S''
+sS'layer'
+p3
+S'Framework'
+p4
+sS'code'
+p5
+S''
+sS'snapshot'
+p6
+(dp7
+sS'traceback'
+p8
+S'Traceback (most recent call last):\n  File "/home/eleudson/develop/web2py/gluon/main.py", line 444, in wsgibase\n    serve_controller(request, response, session)\n  File "/home/eleudson/develop/web2py/gluon/main.py", line 183, in serve_controller\n    page = run_view_in(response._view_environment)\n  File "/home/eleudson/develop/web2py/gluon/compileapp.py", line 733, in run_view_in\n    ccode = compile2(scode, filename)\n  File "/home/eleudson/develop/web2py/gluon/restricted.py", line 205, in compile2\n    return compile(code, layer, \'exec\')\n  File "/home/eleudson/develop/web2py/applications/SysEscolinha/views/default/areaUsuario.html", line 133\n    for academico in =boletim:\n                     ^\nSyntaxError: invalid syntax\n'
+p9
+s.

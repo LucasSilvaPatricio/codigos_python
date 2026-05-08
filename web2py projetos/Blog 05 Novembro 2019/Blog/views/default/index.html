@@ -1,0 +1,47 @@
+{{extend 'layout.html'}}
+
+
+{{block painel_direito}}
+{{for post in posts:}}
+<div class="painel-1">
+	<!-- classe que ajusta imagem -->
+	<nav class="imagem">
+		<!-- pesquisa a primeira imagem para o post -->
+		{{source = "#"}}
+		{{foto = db(post.id == db.imagems.id_foto).select(db.imagems.img)}}
+		{{try:}}
+		{{source = URL('download',args=foto[0]['img'],host=True)}}
+		{{except:}}
+		{{pass}}
+		<!-- exibi a imagem buscada no banco de dados referente ao post -->
+		<img src="{{=source}}"/>
+	</nav>
+
+	<!-- classe que ajusta informações iniciais do post -->
+	<nav class="informacoes">
+		<nav class="titulo">
+			{{=post.title}}
+		</nav>
+
+		
+			{{if post.descricao != None:}}
+				<nav class="descricao">
+				{{response.write(post.descricao[:200]+"...")}}
+				</nav>
+			{{pass}}
+		
+
+		<a href="{{=URL('post',args=(post.id))}}"><div class="botao_normal azul_gradiente">ler</div></a>
+	</nav>
+</div>
+{{pass}}
+{{end}}
+
+{{block painel_esquerdo}}
+<h1>sem conteudo para postar</h1>
+{{end}}
+
+
+{{block footer}}
+<center><a class="link_proximo preto" href="{{=URL('index',args=(limite[0],limite[1]))}}">ir para <span>({{=limite[0]+1}}</span>,<span>{{=limite[1]}})</span></a></center>
+{{end}}

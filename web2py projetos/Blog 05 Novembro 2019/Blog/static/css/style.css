@@ -1,0 +1,33 @@
+/* ================ CSS BODY ================ */
+body{background:linear-gradient(to bottom,gray,white,gray);}
+
+/* ================ CSS MENU ================ */
+.preto{background:#242222;color:white;}
+.vermelho{background:#fc0324;color:white;}
+.azul{background:#4792f5;color:white}
+.azul_gradiente{background:linear-gradient(to bottom,#0b65db,#4792f5,#0b65db);color:white;border:solid 1px white;}
+.meu-menu{background:#4792f5;color:white;display:flex;margin:10px;margin-bottom:-10px;}
+.botao{padding:10px 20px;}
+.botao:hover{background:#242222;transition-duration: 2s;}
+
+/* ================ CSS POST ================ */
+.posts{background:gray;padding:5px;border-radius: 3px;display:flex;flex-wrap:wrap;}
+.comentario{background:rgba(255,0,0,0.7);color:white;padding:20px;border-radius: 3px;margin:5px auto;width:48%;}
+.comentario span{margin:0px 10px;}
+.comentario .letra{color:cyan;margin:0px;}
+.descricao{background:rgba(0,0,0,0.7);color:white;padding:5px;}
+#result{margin:10px auto;width:900px;border:solid 2px red;}
+
+/* ================ CSS PAINEIS ================ */
+.painel-super{display: flex;}
+.painel-direito{background:#e6e6e6;margin:10px;margin-right: 0px;padding:20px;width:70%;}
+.painel-esquerdo{background:#c9c9c9;margin:10px;margin-left: 0px;padding:20px;width:30%;}
+.painel-1{margin-bottom:10px;margin-top:10px;background:#c9c9c9;display:flex;}
+.painel-1 .imagem img{width:190px;height:190px;margin:10px;}
+.painel-1 .informacoes{width:100%;padding:10px;text-align: center;background:gray;}
+.painel-1 .informacoes .titulo{margin:10px;font-family:sans-serif;font-size:18px;}
+.painel-proximo{background:orange;margin:10px;padding:10px;}
+
+/* ================ CSS BOTAO LEITURA ================ */
+.botao_normal{width:150px;padding:5px;}
+.link_proximo{color:white;padding:5px 20px;}

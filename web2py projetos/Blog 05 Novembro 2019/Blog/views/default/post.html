@@ -1,0 +1,41 @@
+{{extend 'layout.html'}}
+
+{{block painel_direito}}
+	<div class="postagem">
+		{{for atributos in post:}}
+			{{imagems = []}}
+			{{for foto in db(atributos.id == db.imagems.id_foto).select(db.imagems.img):}}
+					{{imagems.append(foto)}}
+			{{pass}}
+			
+			
+			{{count = 0}}
+
+			{{if imagems != []:}}
+
+			{{atributos.body = atributos.body}}
+
+			{{for x in str(db(atributos.id == db.post.id).select(db.post.tag)[0]['tag']).split(':'):}}
+				{{try:}}
+					{{source = URL('download',args=imagems[count]['img'],host=True)}}
+					{{atributos.body = atributos.body.replace(x,source)}}
+				{{except IndexError as e:}}
+				{{pass}}
+				{{count = count + 1}}
+			{{pass}}
+
+			{{=MARKMIN(atributos.body)}}
+			{{else:}}
+				{{=MARKMIN(atributos.body)}}
+			{{pass}}
+		{{pass}}
+
+		
+			
+		
+	</div>
+{{end}}
+
+<div class="comentario">
+	{{=form}}
+</div>

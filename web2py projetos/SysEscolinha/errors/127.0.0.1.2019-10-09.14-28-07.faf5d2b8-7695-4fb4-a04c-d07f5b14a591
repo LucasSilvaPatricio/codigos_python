@@ -1,0 +1,19 @@
+(dp1
+S'output'
+p2
+S''
+sS'layer'
+p3
+S'Framework'
+p4
+sS'code'
+p5
+S''
+sS'snapshot'
+p6
+(dp7
+sS'traceback'
+p8
+S'Traceback (most recent call last):\n  File "/home/eleudson/develop/web2py/gluon/main.py", line 444, in wsgibase\n    serve_controller(request, response, session)\n  File "/home/eleudson/develop/web2py/gluon/main.py", line 179, in serve_controller\n    page = run_controller_in(request.controller, request.function, environment)\n  File "/home/eleudson/develop/web2py/gluon/compileapp.py", line 657, in run_controller_in\n    ccode = getcfs(layer, filename, lambda: compile2(code, filename))\n  File "/home/eleudson/develop/web2py/gluon/cfs.py", line 50, in getcfs\n    data = filter()\n  File "/home/eleudson/develop/web2py/gluon/compileapp.py", line 657, in <lambda>\n    ccode = getcfs(layer, filename, lambda: compile2(code, filename))\n  File "/home/eleudson/develop/web2py/gluon/restricted.py", line 205, in compile2\n    return compile(code, layer, \'exec\')\n  File "/home/eleudson/develop/web2py/applications/SysEscolinha/controllers/default.py", line 22\n    try{\n       ^\nSyntaxError: invalid syntax\n'
+p9
+s.

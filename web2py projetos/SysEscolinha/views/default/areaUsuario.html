@@ -1,0 +1,64 @@
+{{extend 'layout.html'}}
+<h3>Ambiente Usuario</h3>
+<div class="painel-usuario">
+
+<nav id="sair"><a href="{{=URL('sair')}}"><button>sair</button></a></nav>
+<nav class="menu"><a href="{{=URL('mural')}}"><button>mural escolar</button></a><a href="{{=URL('recado')}}"><button>reclamações</button></a></nav>
+{{for data in content:}}
+	<nav class="dados-pessoais">
+	<nav class="subtitulo">dados pessoais</nav>
+	<img class="foto" src="{{=URL('download',args=data.foto)}}" width=60 height=60><br><br>
+	<span class="span">Nome:</span><span>{{=data.nome}}</span>
+    <span class="span">Matricula:</span><span>{{=data.matricula}}</span>
+    <span class="span">Serie:</span><span>{{=data.serie}}</span>
+	</nav>
+
+
+	
+{{pass}}
+<nav class="dados-pessoais">
+<nav class="subtitulo">boletim</nav>
+{{if boletim != None:}}
+{{for academico in boletim:}} 
+	
+	<table border=1>
+		<th>nota 1</th><th>nota 2</th><th>nota 3</th><th>nota 4</th><th>media final</th>
+		<tr>
+			<td>{{=academico.n1}}</td>
+			<td>{{=academico.n2}}</td>
+			<td>{{=academico.n3}}</td>
+			<td>{{=academico.n4}}</td>
+			<td>{{=academico.aprovacao}}</td>
+		</tr>
+	</table>
+
+	<hl>
+{{pass}}
+{{else:}}
+	<div class="alerta">você não possui um boletim</div>
+{{pass}}
+
+</nav>
+<div class="turma">
+<nav class="subtitulo">turma</nav>
+{{for dados in aluno:}}
+	<img src="{{=URL('download',args=dados.foto)}}" width=60 height=60><span class="nome">{{=dados.nome}}</span>
+{{pass}}
+</div>
+
+<div class="turma">
+
+<nav class="subtitulo">comentario anonimo [faça uma denuncia anonima]</nav>
+		{{if envio == 1:}}
+			<span>comentario enviado</span>
+		{{elif envio == -1:}}
+			<span>nenhum comentario enviado</span>
+		{{pass}}
+
+
+	<form class="comentario" action="{{=URL('areaUsuario')}}">
+		<textarea name="comentario"></textarea><br>
+		<input type="submit" name="btn" value="enviar">
+	</form>
+</div>
+</div>

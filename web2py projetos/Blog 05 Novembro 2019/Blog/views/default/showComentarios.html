@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+
+<div class="posts">
+{{for comentario in comentarios:}}
+	<nav class="comentario">
+		<span>Nome: {{=comentario.nome}}</span>
+		<span>E-mail: {{=comentario.email}}</span>
+		<span>Conteudo: {{for i in range(0, len(comentario.conteudo)/2):}}
+				  <span class="letra">{{=comentario.conteudo[i]}}</span>
+				  {{pass}}...</span>
+	</nav>
+{{pass}}
+</div>

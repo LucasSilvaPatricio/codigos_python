@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+
+<div class="container">
+	<h3 class="subtitulo">mural escolar</h3>
+	
+	{{for post in result:}}
+		<nav class="post">
+		<h4>{{=post.titulo}}</h4><br>
+		<img src="{{=URL('download',args=post.imagem)}}" width=300 height=200><br><br>
+		<p>{{=post.conteudo}}</p>
+		</nav>
+	{{pass}}
+</div>

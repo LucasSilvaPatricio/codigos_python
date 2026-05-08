@@ -1,0 +1,20 @@
+{{extend 'layout.html'}}
+
+<div class="container">
+	<h3 class="subtitulo">Reclamações</h3>
+	
+		{{if result:}}
+			{{for recado in result:}}
+				<nav class="aviso">
+					<nav class="professor"></nav>
+					<span>[ {{=recado.remetente}} ]</span><br>
+					<span>{{=recado.conteudo}}</span>
+				</nav>
+			{{pass}}
+		{{else:}}
+			<nav class="aviso">
+				<span>sem reclamações</span>
+			</nav>
+		{{pass}}
+	
+</div>

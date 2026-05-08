@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.TypeError'> float() argument must be a string or a number"
+p3
+sS'layer'
+p4
+S'/home/eleudson/develop/web2py/applications/SysEscolinha/controllers/default.py'
+p5
+sS'code'
+p6
+S'<code object <module> at 0x7fdf09eb99b0, file "/home/eleudson/develop/web2py/applications/SysEscolinha/controllers/default.py", line 11>'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/home/eleudson/develop/web2py/gluon/restricted.py", line 219, in restricted\n    exec(ccode, environment)\n  File "/home/eleudson/develop/web2py/applications/SysEscolinha/controllers/default.py", line 144, in <module>\n  File "/home/eleudson/develop/web2py/gluon/globals.py", line 421, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/eleudson/develop/web2py/applications/SysEscolinha/controllers/default.py", line 48, in areaUsuario\n    media = float(boletim[0].n1)+float(boletim[0].n2)+float(boletim[0].n3)+float(boletim[0].n4)/4\nTypeError: float() argument must be a string or a number\n'
+p11
+s.
