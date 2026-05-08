@@ -1,0 +1,10 @@
+[
+  {
+    "name": "c",
+    "turma": {
+      "professor": "p1",
+      "aluno": "a1",
+      "disciplinas": "d1,d2,d3"
+    }
+  }
+]
