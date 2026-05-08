@@ -1,47 +1,114 @@
+"""
+Faça um programa, com uma função que necessite de três argumentos, e que forneça a soma desses três argumentos.
+"""
+"""
+sumval = lambda a,b,c: a+b+c 
+def exec_lambda(fun,*args):
+    return fun(*args)
+
+print(exec_lambda(sumval,10,5,2))
+"""
+"""
+FAÇA UMA FUNÇÃO QUE SOME O PRIMEIRO NOME COM O SEGUNDO NOME USANDO LAMBDA
+"""
+"""
+def sum_name(**kwargs):
+    return kwargs['first_name'] +' '+kwargs['second_name']
+
+print(sum_name(**{'first_name': 'maria'},second_name='moreira'))
+
+sum_name_lambda = lambda **kwargs: kwargs['first_name'] + ' ' + kwargs['second_name']
+name = sum_name_lambda(**{'first_name':'maria','second_name':'moreira'})
+print(name)
+"""
+
+# Faça um programa, com uma função que necessite de um argumento. A função retorna o valor de caractere ‘P’,
+# se seu argumento for positivo, e ‘N’, se seu argumento for zero ou negativo.
 
 """
-   Faça um programa que peça 10 números inteiros, calcule e mostre
-   a quantidade de números pares e a quantidade de números impares.
+def verifica_numero(texto='Sua resposta é '):
+    def np(valor):
+        return texto + 'Positivo' if valor > 0 else 'Negativo'
+    return np
+
+vf1 = verifica_numero('Seu valor foi: ')
+print(vf1(-1))
+"""
+import os 
 
 """
+def executar(a,b):
 
-numeros_impares = []
-numeros_pares = []
-contador = 0
-
-while contador < 5:
-    numero = input(f'Digite o {contador + 1} numero: ')
+    def som():
+        return a+b
     
-    numero = int(numero)
+    def sub():
+        return a-b
     
-    if(numero%2==0):
-        numeros_pares.append(numero)
-    else:
-        numeros_impares.append(numero)
-        
-    contador = contador + 1
+    def mul():
+        return a*b
+    
+    def div():
+        return a/b
 
-print('\nOs numeros pares que você digitou: ',end='')
+    return {
+        'soma': som,
+        'subitracao': sub,
+        'multiplicacao': mul,
+        'divisao': div
+    }
 
-for par in numeros_pares:
-    print(par, end='')
+#calculadora = executar(10,5)
+#print(calculadora['subitracao']())
+"""
 
-print('\nOs numeros impares que você digitou: ',end='')
+os.system('cls')
 
-for impar in numeros_impares:
-    print(impar, end='')
+def calc(**kwargs):
+    return {
+        'soma': lambda :kwargs['numero1'] + kwargs['numero2'],
+        'subitracao': lambda :kwargs['numero1'] - kwargs['numero2'],
+        'multiplicacao': lambda :kwargs['numero1'] * kwargs['numero2'],
+        'divisao': lambda :kwargs['numero1'] / kwargs['numero2']
+    }
+
+c = calc(numero1=15, numero2=50)
+#print(c['divisao']())
+
+"""
+Sua tarefa é implementar uma função chamada filtrar_pessoas_por_cidade(pessoas, cidade)
+que recebe a lista de pessoas e o nome de uma cidade como parâmetros. A função deve retornar
+uma nova lista contendo apenas as pessoas que moram na cidade especificada.
+"""
+
+from pprint import pprint
 
 
-print('\n')
+def filtrar_por_cidade(cidade):
+    lista_de_resultados = [
+        item
+        for item in pessoas
+        if item['cidade'] == cidade
+    ]
+    for item in pessoas:
+        if item['cidade'] == cidade:
+            lista_de_resultados.append(item)
+    return lista_de_resultados
 
-numeros_pares = []
-numeros_impares = []
+pessoas = [
+    {'nome': 'João', 'idade': 25, 'cidade': 'São Paulo'},
+    {'nome': 'Maria', 'idade': 30, 'cidade': 'Rio de Janeiro'},
+    {'nome': 'Pedro', 'idade': 20, 'cidade': 'Belo Horizonte'},
+    {'nome': 'Ana', 'idade': 27, 'cidade': 'São Paulo'},
+]
 
-for i in range(0,5):
-    numero = int(input(f'Digite o {i} numero: '))
+def filtrar_por_cidade(cidade):
+    return [item for item in pessoas if item['cidade'] == cidade]
 
-    numeros_pares.append(str(numero)) if numero%2 == 0 else ...
-    numeros_impares.append(str(numero)) if numero%2 == 1 else ...
+resultados = filtrar_por_cidade('Rio de Janeiro')
+pprint(resultados)
 
-print(f'Numeros pares: ', *[par for par in numeros_pares])
-print(f'Numeros impares: ', *[impar for impar in numeros_impares])
+import copy 
+nova_pessoa = copy.deepcopy(pessoas)
+pessoas[0].update({'cidade':'ceara'})
+pprint(pessoas);pprint(nova_pessoa)
