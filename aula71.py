@@ -12,7 +12,12 @@ i           = 0
 while i < len(frase):
 
     letra_atual = frase[i].lower()
-    if frase.lower().count(letra_atual) > quantidade and not letra_atual==' ':
+
+    if letra_atual == ' ':
+        i+=1
+        continue
+
+    if frase.lower().count(letra_atual) > quantidade:
         letra = letra_atual
         quantidade = frase.lower().count(letra_atual)
     i+=1
