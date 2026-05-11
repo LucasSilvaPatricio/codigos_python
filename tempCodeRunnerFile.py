@@ -1,5 +1,3 @@
-
-
 numeros_range           = range(0,10)
 lista_de_numeros        = list(numeros_range)
 
